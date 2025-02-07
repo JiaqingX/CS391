@@ -41,11 +41,9 @@ function displayResult(result) {
     let output = document.getElementById("output");
     
     if (!output) {
-        console.error("Element with ID 'output' not found!");
         return;
     }
     
-    console.log("Calculated result:", result);  
     output.innerHTML = result;
     
     if (result < 0) {
