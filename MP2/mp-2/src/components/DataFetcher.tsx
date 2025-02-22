@@ -20,15 +20,16 @@ const DataFetcher: React.FC = () => {
 
   useEffect(() => {
     axios.get<{ results: Character[] }>('https://rickandmortyapi.com/api/character')
-      .then((response) => {
+      .then((response: { data: { results: Character[] } }) => {
         setData(response.data.results);
         setLoading(false);
       })
-      .catch((error) => {
+      .catch((error: Error) => {
         setError(error.message);
         setLoading(false);
       });
   }, []);
+  
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
