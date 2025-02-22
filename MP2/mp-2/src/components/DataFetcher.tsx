@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import DisplayData from '../components/DisplayData';
+import DisplayData from './DisplayData';
 
 interface Character {
   id: number;
