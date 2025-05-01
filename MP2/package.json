@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@vitejs/plugin-react-swc": "^3.8.0",
+    "axios": "^1.7.9",
+    "styled-components": "^6.1.15"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@types/styled-components": "^5.1.34"
+  }
+}
