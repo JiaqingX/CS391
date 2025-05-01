@@ -1,10 +1,9 @@
-export const dynamic = "force-dynamic";
-
 'use client';
 
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
-export default function LoggedIn() {
+function ClientComponent() {
   const params = useSearchParams();
   const name = params.get('name');
   const login = params.get('login');
@@ -18,5 +17,13 @@ export default function LoggedIn() {
       {name && <p>Name: {name}</p>}
       {email && <p>Email: {email}</p>}
     </main>
+  );
+}
+
+export default function LoggedIn() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ClientComponent />
+    </Suspense>
   );
 }
