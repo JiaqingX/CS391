@@ -15,11 +15,7 @@ export async function GET(req: NextRequest) {
       Accept: 'application/json',
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({
-      client_id,
-      client_secret,
-      code,
-    }),
+    body: JSON.stringify({ client_id, client_secret, code }),
   });
 
   const tokenData = await tokenRes.json();
@@ -43,6 +39,6 @@ export async function GET(req: NextRequest) {
   const avatar = encodeURIComponent(user.avatar_url || '');
   const email = encodeURIComponent(user.email || '');
 
-  const redirectUrl = `${req.nextUrl.origin}/?name=${name}&login=${login}&avatar=${avatar}&email=${email}`;
+  const redirectUrl = `${req.nextUrl.origin}/loggedin?name=${name}&login=${login}&avatar=${avatar}&email=${email}`;
   return NextResponse.redirect(redirectUrl);
 }
