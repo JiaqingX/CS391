@@ -2,6 +2,8 @@
 
 import { useSearchParams } from 'next/navigation';
 
+export const dynamic = "force-dynamic";
+
 export default function LoggedIn() {
   const params = useSearchParams();
   const name = params.get('name');
